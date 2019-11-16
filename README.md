@@ -28,7 +28,7 @@ countSignChangesWithoutZip xs = fst $ foldl onSignCheck (0, head xs >= 0) xs
 and
 
 ```haskell
--- The second algorithm to count sign changes in an array
+-- The second algorithm to count sign changes in a list
 countSignChanges :: Integral a =>  [a] -> a
 countSignChanges [] = 0
 countSignChanges xs = foldr (\(a, b) res -> if a >= 0 && b < 0 || a < 0 && b >= 0
