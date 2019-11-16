@@ -103,4 +103,4 @@ $ stack exec -- stack exec count-sign-changes -- parallelWithoutZip +RTS -N2 -l
 
 ![alt text](screenshots/count-sign-changes-parallelWithoutZip.png)
 
-As we can see, there is a huge speedup between 1 and 3, but there almost no difference between 2 and 4
+As we can see, there is a huge speedup between 1 and 3 (3 times faster), but there almost no difference between 2 and 4
