@@ -54,6 +54,8 @@ testList :: Integral a => [a]
 testList = [0, -1] ++ [-1..600000000] ++ [ -1, -7 ]
 ```
 
+For this list the answer will be `3`, first change on -1, second on 0 and the last on -1
+
 With chunks size of 10000 for parallel algorithms
 
 It means that there are 4 ways to test these algorithms
