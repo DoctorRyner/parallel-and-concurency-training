@@ -2,3 +2,4 @@
 parallelism-and-concurency-training.cabal
 *~
 *.eventlog
+.DS_Store
