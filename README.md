@@ -28,7 +28,7 @@ countSignChangesWithoutZip xs = fst $ foldl onSignCheck (0, head xs >= 0) xs
 and
 
 ```haskell
--- The simple algorithm to count sign changes in an array
+-- The second algorithm to count sign changes in an array
 countSignChanges :: Integral a =>  [a] -> a
 countSignChanges [] = 0
 countSignChanges xs = foldr (\(a, b) res -> if a >= 0 && b < 0 || a < 0 && b >= 0
@@ -46,6 +46,15 @@ So, lets test them, if you check out `count-sing-changes/Main.hs` then you'll th
     "nonParallel"        -> nonParallel
     _                    -> nonParallelWithoutZip
 ```
+
+Algorithns process this list
+```haskell
+-- An example list to test algorithms
+testList :: Integral a => [a]
+testList = [0, -1] ++ [-1..600000000] ++ [ -1, -7 ]
+```
+
+With chunks size of 10000 for parallel algorithms
 
 It means that there are 4 ways to test these algorithms
 
@@ -70,7 +79,7 @@ $ stack exec -- stack exec count-sign-changes -- parallel +RTS -l
 
 ![alt text](screenshots/cont-sign-changes-parallel.png)
 
-1. Running it as a parallel algorithm without zip
+4. Running it as a parallel algorithm without zip
 ```bash
 $ stack exec -- stack exec count-sign-changes -- parallelWithoutZip +RTS -l
 ```
