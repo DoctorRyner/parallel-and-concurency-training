@@ -35,7 +35,7 @@ nonParallelWithoutZip = nonParallelCustom countSignChangesWithoutZip
 
 -- Parallel functions
 parallelCustom :: Integral a => ([a] -> a) -> a
-parallelCustom f =  runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize ([0, -1] ++ [-1..60000000])
+parallelCustom f =  runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize testList
   where
     chunkSize = 10000
 
