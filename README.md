@@ -68,8 +68,15 @@ $ stack exec -- stack exec count-sign-changes -- nonParallel +RTS -N2 -l
 ![alt text](screenshots/count-sign-changes-nonParallel.png)
 
 2. Running it as a non parallel algorithm without zip
+```bash
+$ stack exec -- stack exec count-sign-changes -- nonParallelWithoutZip +RTS -N2 -l
+```
 
-It uses thist code to calculate it in parallel
+![alt text](screenshots/count-sign-changes-nonParallelWithoutZip.png)
+
+3. Running it as a parallel algorithm
+
+It uses this code to calculate in parallel
 
 ```haskell
 -- Parallel functions
@@ -83,13 +90,6 @@ parallel           = parallelCustom countSignChanges
 parallelWithoutZip = parallelCustom countSignChangesWithoutZipTuned
 ```
 
-```bash
-$ stack exec -- stack exec count-sign-changes -- nonParallelWithoutZip +RTS -N2 -l
-```
-
-![alt text](screenshots/count-sign-changes-nonParallelWithoutZip.png)
-
-3. Running it as a parallel algorithm
 ```bash
 $ stack exec -- stack exec count-sign-changes -- parallel +RTS -N2 -l
 ```
