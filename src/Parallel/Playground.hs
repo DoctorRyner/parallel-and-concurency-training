@@ -23,7 +23,7 @@ countSignChangesWithoutZip xs = fromEnum $ fst $ foldl onSignCheck (0, head xs >
 
 -- An example list to test algorithms
 testList :: [Integer]
-testList = [0, -1] ++ [-1..60000000] ++ [ -1, -7 ]
+testList = [0, -1] ++ [-1..100000000] ++ [ -1, -7 ]
 
 -- Non parallel functions
 nonParallelCustom :: ([Integer] -> Int) -> Int
@@ -35,7 +35,7 @@ nonParallelWithoutZip = nonParallelCustom countSignChangesWithoutZip
 
 -- Parallel functions
 parallelCustom :: ([Integer] -> Int) -> Int
-parallelCustom f =  runEval $ pure $ sum $ parMap (rparWith rdeepseq) f $ chunksOf chunkSize testList
+parallelCustom f =  runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize testList
   where
     chunkSize = 10000
 

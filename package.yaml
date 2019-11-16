@@ -21,6 +21,9 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -feager-blackholing
     - -eventlog
+    - -O
+    - -optc-O3
     dependencies:
     - parallelism-and-concurency-training

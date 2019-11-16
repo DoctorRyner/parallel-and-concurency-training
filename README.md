@@ -51,7 +51,7 @@ Algorithms process this list
 ```haskell
 -- An example list to test algorithms
 testList :: Integral a => [a]
-testList = [0, -1] ++ [-1..60000000] ++ [ -1, -7 ]
+testList = [0, -1] ++ [-1..100000000] ++ [ -1, -7 ]
 ```
 
 For this list the answer will be `3`, first change on -1, second on 0 and the last on -1
