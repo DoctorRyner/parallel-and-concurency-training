@@ -1,6 +1,5 @@
 module Parallel.Playground where
 
-import           Control.DeepSeq
 import           Control.Parallel.Strategies
 import           Data.Function               ((&))
 import           Data.List.Split
@@ -36,7 +35,7 @@ nonParallelWithoutZip = nonParallelCustom countSignChangesWithoutZip
 
 -- Parallel functions
 parallelCustom :: ([Integer] -> Int) -> Int
-parallelCustom f =  runEval $ pure $ sum $ force $ parMap rpar f $ chunksOf chunkSize testList
+parallelCustom f =  runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize testList
   where
     chunkSize = 10000
 

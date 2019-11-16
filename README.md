@@ -68,6 +68,21 @@ $ stack exec -- stack exec count-sign-changes -- nonParallel +RTS -N2 -l
 ![alt text](screenshots/count-sign-changes-nonParallel.png)
 
 2. Running it as a non parallel algorithm without zip
+
+It uses thist code to calculate it in parallel
+
+```haskell
+-- Parallel functions
+parallelCustom :: ([Integer] -> Int) -> Int
+parallelCustom f =  runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize testList
+  where
+    chunkSize = 10000
+
+parallel, parallelWithoutZip :: Int
+parallel           = parallelCustom countSignChanges
+parallelWithoutZip = parallelCustom countSignChangesWithoutZipTuned
+```
+
 ```bash
 $ stack exec -- stack exec count-sign-changes -- nonParallelWithoutZip +RTS -N2 -l
 ```
@@ -87,3 +102,5 @@ $ stack exec -- stack exec count-sign-changes -- parallelWithoutZip +RTS -N2 -l
 ```
 
 ![alt text](screenshots/count-sign-changes-parallelWithoutZip.png)
+
+As we can see, there is a huge speedup between 1 and 3, but there almost no difference between 2 and 4
