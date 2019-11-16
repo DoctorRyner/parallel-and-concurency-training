@@ -14,9 +14,9 @@ library:
   source-dirs: src
 
 executables:
-  app:
+  count-sign-changes:
     main:                Main.hs
-    source-dirs:         app
+    source-dirs:         count-sign-changes
     ghc-options:
     - -threaded
     - -rtsopts

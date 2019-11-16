@@ -1,6 +1,0 @@
-default: sae test
-
-test: |
-    stack build
-    stack exec app -- +RTS -N4 -l
-    threadscope app.eventlog
