@@ -23,7 +23,7 @@ countSignChangesWithoutZip xs = fst $ foldl onSignCheck (0, head xs >= 0) xs
 
 -- An example list to test algorithms
 testList :: Integral a => [a]
-testList = [0, -1] ++ [-1..60000000] ++ [ -1, -7 ]
+testList = [0, -1] ++ [-1..600000000] ++ [ -1, -7 ]
 
 -- Non parallel functions
 nonParallelCustom :: Integral a => ([a] -> a) -> a
@@ -37,7 +37,7 @@ nonParallelWithoutZip = nonParallelCustom countSignChangesWithoutZip
 parallelCustom :: Integral a => ([a] -> a) -> a
 parallelCustom f =  runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize ([0, -1] ++ [-1..60000000])
   where
-    chunkSize = 1000
+    chunkSize = 10000
 
 parallel, parallelWithoutZip :: Integral a => a
 parallel           = parallelCustom countSignChanges
