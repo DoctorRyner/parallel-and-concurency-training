@@ -1,3 +1,4 @@
 .stack-work/
 parallelism-and-concurency-training.cabal
 *~
+*.eventlog
