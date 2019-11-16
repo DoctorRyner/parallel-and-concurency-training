@@ -37,7 +37,7 @@ countSignChanges xs = foldr (\(a, b) res -> if a >= 0 && b < 0 || a < 0 && b >= 
                             ) 0 $ zip xs $ tail xs
 ```
 
-Lets test them, if you check out `count-sing-changes/Main.hs` then you'll see this
+Lets test them, if you check out [count-sign-changes](Main.hs) then you'll see this
 
 ```haskell
 [x] -> show $ case x of
