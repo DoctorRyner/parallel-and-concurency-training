@@ -4,9 +4,9 @@
 
 You need to get stack from https://docs.haskellstack.org/en/stable/README/ in case if you don't have it
 
-Also you may need to see execution process in details https://github.com/haskell/ThreadScope
+Also you may want to be able to see execution process in details https://github.com/haskell/ThreadScope
 
-Then you can build everything it with `$ stack build`
+Then you can build everything with `$ stack build`
 
 # Parallel
 
