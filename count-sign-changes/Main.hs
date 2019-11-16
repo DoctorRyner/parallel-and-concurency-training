@@ -9,7 +9,7 @@ main = do
 
     putStrLn $ case args of
         [x] -> show $ case x of
-            "parallel"           -> parallel :: Integer
+            "parallel"           -> parallel
             "parallelWithoutZip" -> parallelWithoutZip
             "nonParallel"        -> nonParallel
             _                    -> nonParallelWithoutZip
