@@ -47,7 +47,7 @@ Lets test them, if you check out [count-sign-changes/Main.hs](count-sign-changes
     _                    -> nonParallelWithoutZip
 ```
 
-Algorithns process this list
+Algorithms process this list
 ```haskell
 -- An example list to test algorithms
 testList :: Integral a => [a]
