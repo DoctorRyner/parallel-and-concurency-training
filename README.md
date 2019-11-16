@@ -51,7 +51,7 @@ Algorithms process this list
 ```haskell
 -- An example list to test algorithms
 testList :: Integral a => [a]
-testList = [0, -1] ++ [-1..600000000] ++ [ -1, -7 ]
+testList = [0, -1] ++ [-1..60000000] ++ [ -1, -7 ]
 ```
 
 For this list the answer will be `3`, first change on -1, second on 0 and the last on -1
@@ -62,28 +62,28 @@ It means that there are 4 ways to test these algorithms
 
 1. Running it as a non parallel algorithm
 ```bash
-$ stack exec -- stack exec count-sign-changes -- nonParallel +RTS -l
+$ stack exec -- stack exec count-sign-changes -- nonParallel +RTS -N2 -l
 ```
 
-![alt text](screenshots/cont-sign-changes-nonParallel.png)
+![alt text](screenshots/count-sign-changes-nonParallel.png)
 
 2. Running it as a non parallel algorithm without zip
 ```bash
-$ stack exec -- stack exec count-sign-changes -- nonParallelWithoutZip +RTS -l
+$ stack exec -- stack exec count-sign-changes -- nonParallelWithoutZip +RTS -N2 -l
 ```
 
-![alt text](screenshots/cont-sign-changes-nonParallelWithoutZip.png)
+![alt text](screenshots/count-sign-changes-nonParallelWithoutZip.png)
 
 3. Running it as a parallel algorithm
 ```bash
-$ stack exec -- stack exec count-sign-changes -- parallel +RTS -l
+$ stack exec -- stack exec count-sign-changes -- parallel +RTS -N2 -l
 ```
 
-![alt text](screenshots/cont-sign-changes-parallel.png)
+![alt text](screenshots/count-sign-changes-parallel.png)
 
 4. Running it as a parallel algorithm without zip
 ```bash
-$ stack exec -- stack exec count-sign-changes -- parallelWithoutZip +RTS -l
+$ stack exec -- stack exec count-sign-changes -- parallelWithoutZip +RTS -N2 -l
 ```
 
-![alt text](screenshots/cont-sign-changes-parallelWithoutZip.png)
+![alt text](screenshots/count-sign-changes-parallelWithoutZip.png)

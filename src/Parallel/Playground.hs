@@ -23,7 +23,7 @@ countSignChangesWithoutZip xs = fst $ foldl onSignCheck (0, head xs >= 0) xs
 
 -- An example list to test algorithms
 testList :: Integral a => [a]
-testList = [0, -1] ++ [-1..600000000] ++ [ -1, -7 ]
+testList = [0, -1] ++ [-1..60000000] ++ [ -1, -7 ]
 
 -- Non parallel functions
 nonParallelCustom :: Integral a => ([a] -> a) -> a
