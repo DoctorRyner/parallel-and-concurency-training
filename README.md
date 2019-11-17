@@ -87,7 +87,7 @@ parallelCustom f = runEval $ pure $ sum $ parMap rpar f $ chunksOf chunkSize tes
 
 parallel, parallelWithoutZip :: Int
 parallel           = parallelCustom countSignChanges
-parallelWithoutZip = parallelCustom countSignChangesWithoutZipTuned
+parallelWithoutZip = parallelCustom countSignChangesWithoutZip
 ```
 
 ```bash
